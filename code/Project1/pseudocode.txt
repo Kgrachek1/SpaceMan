@@ -1,0 +1,24 @@
+//---Constants----//
+
+//--- cached elements---//
+
+//-- functions --//
+
+//-- event listeners -- //
+
+
+// Start //
+
+// generate random word from stored array
+
+// prompt player to enter letter that is stored in an array
+
+// return result of entered letter true/false 
+
+// if result true fill fuel
+
+// if false add to incorrect words list
+
+// if player wins fuel fills up and spaceman leaves
+
+// if false rocket cant take off
