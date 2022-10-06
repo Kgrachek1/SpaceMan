@@ -1,0 +1,29 @@
+//---Constants----//
+Array of letters and random words for game
+
+//--- cached elements---//
+ Elements that dictate flow of the game
+
+//-- functions --//
+Functions that sort and loop over arrays
+ Functions that determine true or false
+ 
+//-- event listeners -- //
+ Display messages for correct or incorrect guess
+ Button clicks (letters)
+
+// Start //
+
+// generate random word from stored array
+
+// display length of random word with underscores that are spaced apart
+
+// prompt player to enter letter that is stored in an array of letters
+
+// return result of entered letter true/false if true increment correct letter by 1
+
+// if the guess is false (incorrect) increment wrong guesses by 1
+
+// if player wins fuel fills up and spaceman leaves 
+
+// if player loses rocket cant take off spaceman is trapped
