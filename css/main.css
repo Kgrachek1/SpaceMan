@@ -1,6 +1,22 @@
 * {
-display:block
+    display:inline-block;
+    margin: 0auto;
+    
+}
+h1 {
+    text-align: center;
 }
 body {
+    background: no-repeat url(https://i.imgur.com/Ga91A2S.jpg);
+
     
+}
+div {
+    
+    background: no-repeat url(https://i.imgur.com/Ga91A2S.jpg)
+    
+}
+
+article {
+    position: justify;
 }
