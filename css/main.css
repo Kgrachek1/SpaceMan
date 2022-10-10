@@ -1,22 +1,72 @@
 * {
-    display:inline-block;
+    display:block;
     margin: 0auto;
     
 }
+body { 
+    background: url(https://i.imgur.com/Ga91A2S.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 h1 {
     text-align: center;
+    color:antiquewhite
 }
-body {
-    background: no-repeat url(https://i.imgur.com/Ga91A2S.jpg);
-
-    
+h2 {
+    text-align: center;
+    color:rgb(246, 242, 15);
+    font-size: xx-large;
+    margin-bottom: 150px;
+    margin-top: 150px;
+   
+   
+}
+#spaceman {
+    height:50px;
+    width:150px
 }
 div {
-    
-    background: no-repeat url(https://i.imgur.com/Ga91A2S.jpg)
+   text-align: center;
+   position: relative;
+   padding-left: 100px;
     
 }
 
 article {
+    position:relative;
+}
+
+button {
+    display:inline-flex;
+    border-radius: 20%;
+    height:75px;
+    width:75px;
+    background:url(https://i.imgur.com/mS8rJB1.jpg) ;
+    color:white;
+    font-size: xx-large;
+    font-display: center;
+}
+#rocket {
     position: justify;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  
+}
+
+#container {
+margin-top: 50px;
+}
+
+#spaceman {
+    height:200px;
+    background:none;
+    display:inline-flex;
+    padding-right: 100px;
+}
+article:btn {
+    text-align:center;
 }

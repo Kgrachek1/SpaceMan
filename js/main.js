@@ -1,97 +1,107 @@
  //----- CONSTANTS -----//
- const CATWORDS = [
-     'Phoenix',
-     'Tesla',
-     'Mario',
-     'October',
-     'Armstrong',
-   ];
+const CATWORDS = [
+    'Phoenix',
+    'Tesla',
+    'Mario',
+    'October',
+    'Armstrong',
+];
 const WRONG_GUESS_COUNT = 5;
 
 //----- STATE VARIABLES -----//
 let gameStatus; // null win or lose
-let guess; // guessed letters
+let guessedLetters; // guessed letters
 let wrongGuesses; //  wrong characters
 let currWord; // current random word
-let hidWord // hidden random word
+let hiddenWord ; // hidden random word
 
 //----- cached elements-----//
-const replayBtn = document.getElementById('play-again-btn');
-const rocketMan = document.querySelector('img');
-const guessEle = document.getElementById('guess');
-const msgEl = document.querySelector('h2');
+const replayBtn = document.getElementById('replay');
+const spacemanImg = document.getElementById('spaceman');
+const guessedChars = document.getElementById('guessed-characters');
+const gameStatusMsg = document.getElementById('game-status-message');
 const letterBtns = [...document.querySelectorAll('article > button')];
 
 //----- event listeners -----//
+// letterBtns.forEach(function(btn) {
+//   btn.addEventListener('click', handleLetterClick);  
+// })
 document.querySelector('article').addEventListener('click', handleLetterClick);
 replayBtn.addEventListener('click', init);
 
 /*----- functions -----*/
-init();
-includes
+init()
+
 function init() {
     wrongGuesses = [];
-    const rndIdx = Math.floor(Math.random() * CATWORDS[rndIdx].toUpperCase().split(''));
-    guess = hidWord.map(ltr => ltr === ' ' ? ' ' : '_');
+    const randomIndex = Math.floor(Math.random() * CATWORDS.length);
+    hiddenWord = CATWORDS[randomIndex].toUpperCase().split('');
+    guessedLetters = hiddenWord.map(letter => letter === ' ' ? ' ' : '_');
     gameStatus = null;
     render();
-}
+} 
 
 function render() {
-  
-    renderMessage();
-    rocketMan.src = `https://i.imgur.com/6R0jN9u${wrongGuesses.length}.png`
-    guessEle.textContent = guess.join('');
     renderButtons();
+    renderSpacemanImage();
+    renderGuessedCharacters();
+    renderMessage();
 }
 
+function renderGuessedCharacters() {
+    guessedChars.innerText = guessedLetters.join('-');
+}
+
+function renderSpacemanImage() {
+    spacemanImg.src=`images/spaceman-${wrongGuesses.length}.jpg`;
+}
+
+function renderMessage() {
+    if (gameStatus === 'won') {
+        gameStatusMsg.innerHTML = 'Spaceman is ready for takeoff!';
+        } else if (gameStatus === 'loss') {
+            gameStatusMsg.innerHTML = `Spaceman is marooned OH NO!`;
+        }else  {
+            gameStatusMsg.innerText = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
+    }
+
+}
 
 function renderButtons() {
-    ltrBtns.forEach(function(btn) {
-        const ltr = btn.textContent;
+    letterBtns.forEach(function(btn) {
+        const ltr = btn.innerText;
         if (wrongGuesses.includes(ltr)) {
             btn.className = 'wrong';
-        } else if (guess.includes(ltr)) {
+        } else if (guessedLetters.includes(ltr)) {
             btn.className = 'correct';
         } else {
             btn.className = '';
+            
         }
     });  
-        function renderMessage() {
-            if (gameStatus === 'won') {
-                msgEl.textContent = 'Spaceman is ready for takeoff!';
-            } else if (gameStatus === 'loss') {
-                msgEl.innerHTML = `Spaceman is marooned OH NO!`;
-            } else {
-                msgEl.textContent = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} The ship cant take much more - Think Hard!`;
-            }
-        }
-    
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
 function handleLetterClick(evt) {
-    const ltr = evt.target.textContent;
-    // guards
+    const ltr = evt.target.innerText;
     if (
         gameStatus ||
-        !ltrBtns.includes(evt.target) ||
+        !letterBtns.includes(evt.target) ||
         wrongGuesses.includes(ltr) ||
-        guess.includes(ltr)
+        guessedLetters.includes(ltr)
     ) return
-    if (hidWord.includes(ltr)) {
-        hidWord.forEach(function (char, idx) {
-            if (char === ltr) guess[idx] = ltr;
-        });
-    } else {
-        wrongGuesses.push(ltr);
+        if (hiddenWord.includes(ltr)) {
+            hiddenWord.forEach(function (char, idx) {
+                if (char === ltr) guessedLetters[idx] = ltr;
+            });
+        } else {
+            wrongGuesses.push(ltr);
+            gameStatus = getGameStatus();
+        }
     }
-    gameStatus = getGameStatus();
-    render();
-}
-
-function getGameStatus() {
-    if (!guess.includes('_')) return 'won';
-    if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
-    return null;
-}
+    
+    function getGameStatus() {
+        if (!guessedLetters.includes('_')) return 'won';
+        if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
+        return null;
+    }
