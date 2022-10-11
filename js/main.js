@@ -68,11 +68,11 @@ function renderSpacemanImage() {
 
 function renderMessage() {
     if (gameStatus === 'won') {
-        gameStatusMsg.innerText = 'Spaceman is ready for takeoff!';
+        gameStatusMsg.textContent = 'Spaceman is ready for takeoff!';
         } else if (gameStatus === 'loss') {
-            gameStatusMsg.innerText = `Spaceman exploded OH NO!`;
+            gameStatusMsg.textContent = `Spaceman exploded OH NO!`;
         }else  {
-            gameStatusMsg.innerText = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
+            gameStatusMsg.textContent = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
     }
 
 }
