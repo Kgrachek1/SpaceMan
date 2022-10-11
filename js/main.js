@@ -5,6 +5,15 @@ const CATWORDS = [
     'MARIO',
     'OCTOBER',
     'ARMSTRONG',
+    'STUDENT',
+    'SOFTWARE',
+    'OUTCOMES',
+    'SEGA',
+    'NINTENDO',
+    'PLAYSTATION',
+    'MUSIC',
+    'FLOATING',
+    'EXPLOSION'
 ];
 const WRONG_GUESS_COUNT = 5;
 
@@ -12,7 +21,6 @@ const WRONG_GUESS_COUNT = 5;
 let gameStatus; // null win or lose
 let guessedLetters; // guessed letters
 let wrongGuesses; //  wrong characters
-//let currWord; // current random word
 let hiddenWord ; // hidden random word
 
 
@@ -28,7 +36,7 @@ const letterBtns = [...document.querySelectorAll('article > button')];
  letterBtns.forEach(function(btn) {
   btn.addEventListener('click', handleLetterClick);  
  });
-//document.querySelector('article').addEventListener('click', handleLetterClick);
+
 replayBtn.addEventListener('click', init);
 
 /*----- functions -----*/
@@ -62,7 +70,7 @@ function renderMessage() {
     if (gameStatus === 'won') {
         gameStatusMsg.innerText = 'Spaceman is ready for takeoff!';
         } else if (gameStatus === 'loss') {
-            gameStatusMsg.innerText = `Spaceman is marooned OH NO!`;
+            gameStatusMsg.innerText = `Spaceman exploded OH NO!`;
         }else  {
             gameStatusMsg.innerText = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
     }
@@ -108,10 +116,4 @@ function handleLetterClick(evt) {
         if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
         return null;
     }
-    //Create WebSocket connection
-const socket = new WebSocket('ws:http://localhost:5500/Project1/');
-
-// Listen for possible errors
-socket.addEventListener('error', (event) => {
-  console.log('WebSocket error: ', event);
-});
+   

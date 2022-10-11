@@ -14,7 +14,7 @@ body {
   }
 h1 {
     text-align: center;
-    color:rgb(33, 216, 97)
+    color:rgb(240, 242, 241)
 }
 h2 {
     text-align: center;
@@ -26,7 +26,7 @@ h2 {
    
 }
 #spaceman {
-    position: absolute;
+    padding-left: 150px;
     height:150px;
     width:150px
     
@@ -40,17 +40,13 @@ div {
 }
 
 article {
-    position:justify;
+    position:fixed;
 }
 @keyframes ctrlpanel {
-    from {background-color:greenyellow;}
-    to {background-color: whitesmoke;}
+    from {background-color:rgb(7, 7, 7);}
     to {background-color: gray;}
-    to {background-color:black;}
-    
-    
-    
    
+     
   }
 button {
     display:inline-flex;
@@ -67,19 +63,12 @@ button {
     animation-duration: 10s;
     animation-iteration-count:infinite;
 }
-#rocket {
-    position: justify;
+#asteroids {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     height: 50vh;
-    float:right;
-}
-
-#container {
-margin-top: 50px;
-grid-template-rows: auto;
 
 }
 
@@ -90,5 +79,5 @@ grid-template-rows: auto;
     height:150px;
     background:none;
     display:inline-flex;
-    
+    float:right;
 }
