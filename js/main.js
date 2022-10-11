@@ -1,10 +1,10 @@
  //----- CONSTANTS -----//
 const CATWORDS = [
-    'Phoenix',
-    'Tesla',
-    'Mario',
-    'October',
-    'Armstrong',
+    'PHOENIX',
+    'TESLA',
+    'MARIO',
+    'OCTOBER',
+    'ARMSTRONG',
 ];
 const WRONG_GUESS_COUNT = 5;
 
@@ -12,8 +12,10 @@ const WRONG_GUESS_COUNT = 5;
 let gameStatus; // null win or lose
 let guessedLetters; // guessed letters
 let wrongGuesses; //  wrong characters
-let currWord; // current random word
+//let currWord; // current random word
 let hiddenWord ; // hidden random word
+
+
 
 //----- cached elements-----//
 const replayBtn = document.getElementById('replay');
@@ -23,10 +25,10 @@ const gameStatusMsg = document.getElementById('game-status-message');
 const letterBtns = [...document.querySelectorAll('article > button')];
 
 //----- event listeners -----//
-// letterBtns.forEach(function(btn) {
-//   btn.addEventListener('click', handleLetterClick);  
-// })
-document.querySelector('article').addEventListener('click', handleLetterClick);
+ letterBtns.forEach(function(btn) {
+  btn.addEventListener('click', handleLetterClick);  
+ });
+//document.querySelector('article').addEventListener('click', handleLetterClick);
 replayBtn.addEventListener('click', init);
 
 /*----- functions -----*/
@@ -49,18 +51,18 @@ function render() {
 }
 
 function renderGuessedCharacters() {
-    guessedChars.innerText = guessedLetters.join('-');
+    guessedChars.innerText = guessedLetters.join(' ');
 }
 
 function renderSpacemanImage() {
-    spacemanImg.src=`images/spaceman-${wrongGuesses.length}.jpg`;
+    spacemanImg.src=`images/spaceman-${wrongGuesses.length}.png`;
 }
 
 function renderMessage() {
     if (gameStatus === 'won') {
-        gameStatusMsg.innerHTML = 'Spaceman is ready for takeoff!';
+        gameStatusMsg.innerText = 'Spaceman is ready for takeoff!';
         } else if (gameStatus === 'loss') {
-            gameStatusMsg.innerHTML = `Spaceman is marooned OH NO!`;
+            gameStatusMsg.innerText = `Spaceman is marooned OH NO!`;
         }else  {
             gameStatusMsg.innerText = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
     }
@@ -69,13 +71,13 @@ function renderMessage() {
 
 function renderButtons() {
     letterBtns.forEach(function(btn) {
-        const ltr = btn.innerText;
-        if (wrongGuesses.includes(ltr)) {
+        const letter = btn.innerText;
+        if (wrongGuesses.includes(letter)) {
             btn.className = 'wrong';
-        } else if (guessedLetters.includes(ltr)) {
+        } else if (guessedLetters.includes(letter)) {
             btn.className = 'correct';
         } else {
-            btn.className = '';
+            btn.className = ' ';
             
         }
     });  
@@ -83,20 +85,21 @@ function renderButtons() {
 }
 
 function handleLetterClick(evt) {
-    const ltr = evt.target.innerText;
+    const letter = evt.target.innerText;
     if (
         gameStatus ||
         !letterBtns.includes(evt.target) ||
-        wrongGuesses.includes(ltr) ||
-        guessedLetters.includes(ltr)
+        wrongGuesses.includes(letter) ||
+        guessedLetters.includes(letter)
     ) return
-        if (hiddenWord.includes(ltr)) {
+        if (hiddenWord.includes(letter)) {
             hiddenWord.forEach(function (char, idx) {
-                if (char === ltr) guessedLetters[idx] = ltr;
+                if (char === letter) guessedLetters[idx] = letter;
             });
         } else {
-            wrongGuesses.push(ltr);
+            wrongGuesses.push(letter);
             gameStatus = getGameStatus();
+            render();
         }
     }
     
@@ -105,3 +108,10 @@ function handleLetterClick(evt) {
         if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
         return null;
     }
+    //Create WebSocket connection
+const socket = new WebSocket('ws:http://localhost:5500/Project1/');
+
+// Listen for possible errors
+socket.addEventListener('error', (event) => {
+  console.log('WebSocket error: ', event);
+});

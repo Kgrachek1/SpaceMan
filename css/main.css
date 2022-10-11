@@ -1,18 +1,19 @@
 * {
     display:block;
     margin: 0auto;
-    
+    font-family: 'Roboto Condensed', sans-serif;
+
 }
 body { 
     background: url(https://i.imgur.com/Ga91A2S.jpg) no-repeat center center fixed; 
+    background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
   }
 h1 {
     text-align: center;
-    color:antiquewhite
+    color:rgb(33, 216, 97)
 }
 h2 {
     text-align: center;
@@ -43,7 +44,7 @@ button {
     border-radius: 20%;
     height:75px;
     width:75px;
-    background:url(https://i.imgur.com/mS8rJB1.jpg) ;
+    background:url(https://i.imgur.com/XQczCKh.jpg) ;
     color:white;
     font-size: xx-large;
     font-display: center;
