@@ -38,16 +38,24 @@ div {
 article {
     position:relative;
 }
-
+@keyframes ctrlpanel {
+    from {background-color: rgb(85, 237, 15);}
+    to {background-color: rgb(247, 172, 21);}
+  }
 button {
     display:inline-flex;
     border-radius: 20%;
     height:75px;
     width:75px;
-    background:url(https://i.imgur.com/XQczCKh.jpg) ;
     color:white;
     font-size: xx-large;
     font-display: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(14, 233, 21);
+    animation-name: ctrlpanel;
+    animation-duration: 10s;
+    animation-iteration-count:infinite;
 }
 #rocket {
     position: justify;
@@ -55,19 +63,27 @@ button {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-  
+    height: 50vh;
+    float:right;
 }
 
 #container {
 margin-top: 50px;
+grid-template-rows: auto;
 }
 
 #spaceman {
     height:200px;
     background:none;
     display:inline-flex;
-    padding-right: 100px;
+    
 }
-article:btn {
-    text-align:center;
+#platform {
+    width:250px;
+    height:150px;
+    
+    
 }
+
+
+  
