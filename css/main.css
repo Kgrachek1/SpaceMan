@@ -2,7 +2,8 @@
     display:block;
     margin: 0auto;
     font-family: 'Roboto Condensed', sans-serif;
-
+    width:100%;
+    height:auto;
 }
 body { 
     background: url(https://i.imgur.com/Ga91A2S.jpg) no-repeat center center fixed; 
@@ -19,14 +20,17 @@ h2 {
     text-align: center;
     color:rgb(246, 242, 15);
     font-size: xx-large;
-    margin-bottom: 150px;
-    margin-top: 150px;
+    margin-bottom: 50px;
+    margin-top: 50px;
    
    
 }
 #spaceman {
-    height:50px;
+    position: absolute;
+    height:150px;
     width:150px
+    
+    
 }
 div {
    text-align: center;
@@ -36,11 +40,17 @@ div {
 }
 
 article {
-    position:relative;
+    position:justify;
 }
 @keyframes ctrlpanel {
-    from {background-color: rgb(85, 237, 15);}
-    to {background-color: rgb(247, 172, 21);}
+    from {background-color:greenyellow;}
+    to {background-color: whitesmoke;}
+    to {background-color: gray;}
+    to {background-color:black;}
+    
+    
+    
+   
   }
 button {
     display:inline-flex;
@@ -50,8 +60,8 @@ button {
     color:white;
     font-size: xx-large;
     font-display: center;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     background-color: rgb(14, 233, 21);
     animation-name: ctrlpanel;
     animation-duration: 10s;
@@ -70,20 +80,15 @@ button {
 #container {
 margin-top: 50px;
 grid-template-rows: auto;
+
 }
 
-#spaceman {
-    height:200px;
+
+
+#platform {
+    width:250px;
+    height:150px;
     background:none;
     display:inline-flex;
     
 }
-#platform {
-    width:250px;
-    height:150px;
-    
-    
-}
-
-
-  
