@@ -45,7 +45,7 @@ init()
 function init() {
     wrongGuesses = [];
     const randomIndex = Math.floor(Math.random() * CATWORDS.length);
-    hiddenWord = CATWORDS[randomIndex].toUpperCase().split('');
+    hiddenWord = CATWORDS[randomIndex].split('');
     guessedLetters = hiddenWord.map(letter => letter === ' ' ? ' ' : '_');
     gameStatus = null;
     render();

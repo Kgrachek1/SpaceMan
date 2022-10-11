@@ -22,20 +22,20 @@ h2 {
     font-size: xx-large;
     margin-bottom: 50px;
     margin-top: 50px;
-   
-   
+    
+    
 }
+
 #spaceman {
     padding-left: 150px;
     height:150px;
     width:150px
-    
-    
+
 }
 div {
-   text-align: center;
-   position: relative;
-   padding-left: 100px;
+    text-align: center;
+    position: justify;
+    display:inline-flex;
     
 }
 
@@ -44,10 +44,10 @@ article {
 }
 @keyframes ctrlpanel {
     from {background-color:rgb(7, 7, 7);}
-    to {background-color: gray;}
-   
-     
-  }
+    to {background-color: rgb(36, 120, 8);}
+    
+    
+}
 button {
     display:inline-flex;
     border-radius: 20%;
@@ -62,6 +62,7 @@ button {
     animation-name: ctrlpanel;
     animation-duration: 10s;
     animation-iteration-count:infinite;
+    
 }
 #asteroids {
     display: block;
@@ -69,7 +70,7 @@ button {
     margin-right: auto;
     width: 50%;
     height: 50vh;
-
+    
 }
 
 
@@ -80,4 +81,9 @@ button {
     background:none;
     display:inline-flex;
     float:right;
+}
+#replay {
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
 }
