@@ -1,15 +1,28 @@
-Technologies for space man used include
+<h1>SPACEMAN</h1>
+<p>Spaceman is a word guessing game, in order to save spaceman from certain doom you must correctly guess the hidden word.</p>
+<br>
+<h1>Screenshots of SPACEMAN</h1>
+<div>
+<img src="https://i.imgur.com/zCAv8hr.png">
+<img src="https://i.imgur.com/O6AhyS8.png">
+<img src="https://i.imgur.com/kDjGeJC.png">
+<br>
+</div>
+<h1>Technologies Used</h1>
+<ul>
+JavaScript
 HTML
 CSS
-JavaScript
-Icebox and styling features are TBD but may include
-Fuel Gauge representing correct answers (Filling up).
-Durability Gauge representing incorrect guesses (Breaking the ship).
-Animated Spaceman
-Animated stars
-Perceived rotation from the planet the player is on.
-Animated Sun.
-Animated Rocket.
-Animated Control panel for player.
-Animated Sub panel for incorrect guesses.
-
+</ul>
+<br>
+<h1>Getting Started</h1>
+<p>
+Take a peak at the amount of letters displayed with underscores and click a letter to begin the word guessing process.
+</p>
+<br>
+<h1>Next Steps</h1>
+<ul>
+Refining Media Querys to optimize multiple screen sizes
+Adding a hint functionality
+Adding Animation to rocket that launches when the games is declared won
+</ul>
