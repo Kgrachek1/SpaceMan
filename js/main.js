@@ -31,7 +31,7 @@ const spacemanImg = document.getElementById('spaceman');
 const guessedChars = document.getElementById('guessed-characters');
 const gameStatusMsg = document.getElementById('game-status-message');
 const letterBtns = [...document.querySelectorAll('article > button')];
-
+const playAgain = document.getElementById('play-again');
 //----- event listeners -----//
 letterBtns.forEach(function (btn) {
     btn.addEventListener('click', handleLetterClick);
@@ -91,7 +91,8 @@ function renderButtons() {
 
         }
     });
-    replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
+    replayBtn.style.visibility = 'visible';
+    
 }
 
 
@@ -121,4 +122,4 @@ function handleLetterClick(evt) {
     }
     render();
 }
-
+getGameStatus();
