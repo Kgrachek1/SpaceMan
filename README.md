@@ -17,6 +17,7 @@ CSS
 <br>
 <h1>Getting Started</h1>
 <p>
+[I'm an inline-style link with title](https://kgrachek1.github.io/SpaceMan/ "Spaceman")
 Take a peak at the amount of letters displayed with underscores and click a letter to begin the word guessing process.
 </p>
 <br>
