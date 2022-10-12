@@ -19,8 +19,8 @@ const WRONG_GUESS_COUNT = 5;
 
 //----- STATE VARIABLES -----//
 let gameStatus; // null win or lose
-let guessedLetters; // guessed letters
-let wrongGuesses; //  wrong characters
+let guessedLetters ; // guessed letters
+let wrongGuesses = 'wrong'; //  wrong characters
 let hiddenWord; // hidden random word
 
 
@@ -92,6 +92,14 @@ function renderButtons() {
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
+function stateHandle() {
+    if (document.querySelectorAll(article > button) === 'wrong') {
+        button.disabled = true; 
+    } else {
+        button.disabled = false; 
+    }
+}
+
 function handleLetterClick(evt) {
     const letter = evt.target.innerText;
     if (
@@ -116,4 +124,5 @@ function getGameStatus() {
     if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
     return null;
 }
+
 
