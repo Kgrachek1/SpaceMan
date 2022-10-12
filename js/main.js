@@ -1,4 +1,4 @@
- //----- CONSTANTS -----//
+//----- CONSTANTS -----//
 const CATWORDS = [
     'PHOENIX',
     'TESLA',
@@ -21,7 +21,7 @@ const WRONG_GUESS_COUNT = 5;
 let gameStatus; // null win or lose
 let guessedLetters; // guessed letters
 let wrongGuesses; //  wrong characters
-let hiddenWord ; // hidden random word
+let hiddenWord; // hidden random word
 
 
 
@@ -33,9 +33,9 @@ const gameStatusMsg = document.getElementById('game-status-message');
 const letterBtns = [...document.querySelectorAll('article > button')];
 
 //----- event listeners -----//
- letterBtns.forEach(function(btn) {
-  btn.addEventListener('click', handleLetterClick);  
- });
+letterBtns.forEach(function (btn) {
+    btn.addEventListener('click', handleLetterClick);
+});
 
 replayBtn.addEventListener('click', init);
 
@@ -49,7 +49,7 @@ function init() {
     guessedLetters = hiddenWord.map(letter => letter === ' ' ? ' ' : '_');
     gameStatus = null;
     render();
-} 
+}
 
 function render() {
     renderButtons();
@@ -63,22 +63,22 @@ function renderGuessedCharacters() {
 }
 
 function renderSpacemanImage() {
-    spacemanImg.src=`images/spaceman-${wrongGuesses.length}.png`;
+    spacemanImg.src = `images/spaceman-${wrongGuesses.length}.png`;
 }
 
 function renderMessage() {
     if (gameStatus === 'won') {
         gameStatusMsg.textContent = 'Spaceman is ready for takeoff!';
-        } else if (gameStatus === 'loss') {
-            gameStatusMsg.textContent = `Spaceman exploded OH NO!`;
-        }else  {
-            gameStatusMsg.textContent = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
+    } else if (gameStatus === 'loss') {
+        gameStatusMsg.textContent = `Spaceman exploded OH NO!`;
+    } else {
+        gameStatusMsg.textContent = `${WRONG_GUESS_COUNT - wrongGuesses.length + 1} Guesses left`;
     }
 
 }
 
 function renderButtons() {
-    letterBtns.forEach(function(btn) {
+    letterBtns.forEach(function (btn) {
         const letter = btn.innerText;
         if (wrongGuesses.includes(letter)) {
             btn.className = 'wrong';
@@ -86,9 +86,9 @@ function renderButtons() {
             btn.className = 'correct';
         } else {
             btn.className = ' ';
-            
+
         }
-    });  
+    });
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
@@ -100,20 +100,20 @@ function handleLetterClick(evt) {
         wrongGuesses.includes(letter) ||
         guessedLetters.includes(letter)
     ) return
-        if (hiddenWord.includes(letter)) {
-            hiddenWord.forEach(function (char, idx) {
-                if (char === letter) guessedLetters[idx] = letter;
-            });
-        } else {
-            wrongGuesses.push(letter);
-            gameStatus = getGameStatus();
-            render();
-        }
+    if (hiddenWord.includes(letter)) {
+        hiddenWord.forEach(function (char, idx) {
+            if (char === letter) guessedLetters[idx] = letter;
+        });
+    } else {
+        wrongGuesses.push(letter);
+        gameStatus = getGameStatus();
+        render();
     }
-    
-    function getGameStatus() {
-        if (!guessedLetters.includes('_')) return 'won';
-        if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
-        return null;
-    }
-   
+}
+
+function getGameStatus() {
+    if (!guessedLetters.includes('_')) return 'won';
+    if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
+    return null;
+}
+
