@@ -20,7 +20,7 @@ const WRONG_GUESS_COUNT = 5;
 //----- STATE VARIABLES -----//
 let gameStatus; // null win or lose
 let guessedLetters ; // guessed letters
-let wrongGuesses = 'wrong'; //  wrong characters
+let wrongGuesses  ; //  wrong characters
 let hiddenWord; // hidden random word
 
 
@@ -48,6 +48,9 @@ function init() {
     hiddenWord = CATWORDS[randomIndex].split('');
     guessedLetters = hiddenWord.map(letter => letter === ' ' ? ' ' : '_');
     gameStatus = null;
+    for(let i = 0; i < letterBtns.length; i++){
+    letterBtns[i].className = '';
+    }
     render();
 }
 
@@ -84,20 +87,20 @@ function renderButtons() {
             btn.className = 'wrong';
         } else if (guessedLetters.includes(letter)) {
             btn.className = 'correct';
-        } else {
-            btn.className = ' ';
+        
 
         }
     });
     replayBtn.style.visibility = gameStatus ? 'visible' : 'hidden';
 }
 
-function stateHandle() {
-    if (document.querySelectorAll(article > button) === 'wrong') {
-        button.disabled = true; 
-    } else {
-        button.disabled = false; 
-    }
+
+
+
+function getGameStatus() {
+    if (!guessedLetters.includes('_')) return 'won';
+    if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
+    return null;
 }
 
 function handleLetterClick(evt) {
@@ -108,21 +111,14 @@ function handleLetterClick(evt) {
         wrongGuesses.includes(letter) ||
         guessedLetters.includes(letter)
     ) return
-    if (hiddenWord.includes(letter)) {
+    if (hiddenWord.includes(letter)) {   
         hiddenWord.forEach(function (char, idx) {
-            if (char === letter) guessedLetters[idx] = letter;
+            if (char === letter)return guessedLetters[idx] = letter;
         });
     } else {
         wrongGuesses.push(letter);
         gameStatus = getGameStatus();
-        render();
     }
+    render();
 }
-
-function getGameStatus() {
-    if (!guessedLetters.includes('_')) return 'won';
-    if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
-    return null;
-}
-
 

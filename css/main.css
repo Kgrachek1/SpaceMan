@@ -84,7 +84,9 @@ button {
     
 
 }
-
+.wrong{
+    visibility: hidden;
+}
 #asteroids {
     animation: fly infinite  50s ease-in ;
     width:250px;
