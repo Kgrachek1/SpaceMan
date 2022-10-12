@@ -134,7 +134,16 @@ button {
 }
 @media only screen and (max-width: 576px) {
    body {
-    display:center;
+    display:inline-flex;
+   }
+   h1 {
+    text-align: center;
+   }
+   article {
+    display:inline-flex;
+    min-width: 350px;
+    min-height: 600px;
+
    }
 }
 
