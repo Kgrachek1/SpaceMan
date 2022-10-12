@@ -140,10 +140,24 @@ button {
     text-align: center;
    }
    article {
-    display:inline-flex;
+    display:inline-block;
     min-width: 350px;
     min-height: 600px;
 
+   }
+    
+    button {
+        justify-content: center;
+        display:inline-table;
+        border-radius: 20%;
+        height:75px;
+        width:75px;
+        color:white;
+        font-size: xx-large;
+        font-display: auto;
+        animation-name: ctrlpanel;
+        animation-duration: 6s;
+        animation-iteration-count:infinite;
    }
 }
 
