@@ -121,15 +121,8 @@ button {
     }
     
 }
-    @media only screen and (max-width: 1200px) {
-        
-    }
-    
-    @media only screen and (min-width: 576px) {
-        
-    }
 @keyframes burner {
-
+    
     0% {
         
         transform: translate(100%, 0);
@@ -139,3 +132,9 @@ button {
         transform: translate(150%,-100vh);
     }
 }
+@media only screen and (max-width: 576px) {
+   body {
+    display:center;
+   }
+}
+
