@@ -47,7 +47,7 @@ div#rplybtn {
 article#container {
     justify-content: center;
     display:inline-flex;
-    height: 20vh;
+    height: 10vh;
     width:100vw;
 }
 @keyframes ctrlpanel {
@@ -67,8 +67,8 @@ button {
     justify-content: center;
     display:inline-flex;
     border-radius: 20%;
-    height:150px;
-    width:150px;
+    height:75px;
+    width:100px;
     color:white;
     font-size: xx-large;
     font-display: auto;
