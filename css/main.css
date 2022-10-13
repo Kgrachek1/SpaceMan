@@ -5,6 +5,7 @@
     
 }
 body { 
+    
     background: url(https://i.imgur.com/Ga91A2S.jpg) no-repeat center center fixed; 
     background-size: cover;
     -webkit-background-size: cover;
@@ -13,12 +14,16 @@ body {
     justify-content: center;
   }
 h1 {
+    align-content: flex-end;
+    align-items: center;
     font-size: 75px;
     text-align: center;
     color:rgb(246, 15, 34)
     
 }
 h2 {
+    align-content: flex-end;
+    align-items: center;
     text-align: center;
     color:rgb(255, 255, 255);
     font-size: xx-large;
@@ -29,22 +34,23 @@ h2 {
 }
 
 #spaceman {
-    padding-left:250px;
     transform:translateY(100%) ;
     animation: float infinite 25s ease-in-out;
     height:150px;
     width:150px
     
-    
-    
+ 
 }
 div#rplybtn {
     justify-content: center;
+    align-items: center;
 
 }
 article#container {
+    align-items: center;
+    align-content: center;
     justify-content: center;
-    display:inline-flexbox;
+    display:flex;
     height: 150px;
 }
 @keyframes ctrlpanel {
@@ -56,15 +62,20 @@ article#container {
     
 }
 main {
-    position:justify;
+    display:flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
     padding-left: 50px;
 }
 button {
+    align-items: center;
+    align-content: center;
     justify-content: center;
     display:inline-flex;
     border-radius: 20%;
-    height:150px;
-    width:150px;
+    height:75px;
+    width:90px;
     color:white;
     font-size: xx-large;
     font-display: auto;
@@ -78,17 +89,20 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 15%;
+    width: 15vh;
     height: 25vh;
-    float:right
+    animation: won infinite 10s ease-in-out;
     
 
 }
 .wrong{
     visibility: hidden;
 }
+
+
+
 #asteroids {
-    animation: fly infinite  50s ease-in ;
+    animation: fly infinite  50s ease-in-out ;
     width:250px;
     height:150px;
     background:none;
@@ -113,13 +127,8 @@ button {
     margin-right: 50%;
 }
 @keyframes float {
-    50% {
-        transform: translate(50%, 0);
-    }
-    100% {
-        transform: translate(100%, 0);
-    }
-    
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
 @keyframes burner {
     
@@ -133,3 +142,8 @@ button {
     }
 }
 
+@keyframes won {
+
+ from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
