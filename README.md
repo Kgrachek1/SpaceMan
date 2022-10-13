@@ -17,7 +17,7 @@ CSS
 <br>
 <h1>Getting Started</h1>
 <p>
-<link src href="https://kgrachek1.github.io/SpaceMan/">
+https://kgrachek1.github.io/SpaceMan/
 Take a peak at the amount of letters displayed with underscores and click a letter to begin the word guessing process.
 </p>
 <br>
