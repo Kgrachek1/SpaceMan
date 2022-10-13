@@ -5,14 +5,13 @@
     
 }
 body { 
+    display: inline-flexbox;
     background: url(https://i.imgur.com/Ga91A2S.jpg) no-repeat center center fixed; 
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    
-    height: fit-content;
-    width:fit-content
+    justify-content: center;
   }
 h1 {
     font-size: 75px;
@@ -32,7 +31,7 @@ h2 {
 
 #spaceman {
     padding-left:250px;
-    transform:translateX(100%) ;
+    transform:translateZ(100%) ;
     animation: float infinite 25s ease-in-out;
     height:150px;
     width:150px
@@ -46,8 +45,7 @@ div#rplybtn {
 }
 article#container {
     justify-content: center;
-    grid-template-rows: 2auto;
-    display:inline-flex;
+    display:inline-flexbox;
     height: 150px;
 }
 @keyframes ctrlpanel {
@@ -64,10 +62,10 @@ main {
 }
 button {
     justify-content: center;
-    display: inline-flex;
+    display:inline-flex;
     border-radius: 20%;
-    height:75px;
-    width:75px;
+    height:150px;
+    width:150px;
     color:white;
     font-size: xx-large;
     font-display: auto;
@@ -135,33 +133,6 @@ button {
         transform: translate(150%,-100vh);
     }
 }
-@media only screen and (max-width: 576px) {
-   body {
-    justify-content: center;
-    display:inline-flex;
-   }
-   h1 {
-    text-align: center;
-   }
-   article {
-    display:inline-block;
-    min-width: 350px;
-    min-height: 600px;
 
-   }
-    
-    button {
-        justify-content: center;
-        display:inline-table;
-        border-radius: 20%;
-        height:75px;
-        width:75px;
-        color:white;
-        font-size: xx-large;
-        font-display: auto;
-        animation-name: ctrlpanel;
-        animation-duration: 6s;
-        animation-iteration-count:infinite;
-   }
-}
+
 
