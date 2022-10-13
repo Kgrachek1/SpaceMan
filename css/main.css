@@ -27,7 +27,9 @@ h2 {
     
     
 }
-
+section {
+    justify-content: center;
+}
 #spaceman {
     padding-left:250px;
     transform:translateY(100%) ;
@@ -61,6 +63,7 @@ main {
     padding-left: 50px;
 }
 button {
+    align-items: center;
     justify-content: center;
     display:inline-flex;
     border-radius: 20%;
