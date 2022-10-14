@@ -95,12 +95,9 @@ function renderButtons() {
     
 }
 
-
-
-
 function getGameStatus() {
     if (!guessedLetters.includes('_')) return 'won';
-    if (wrongGuesses.length > WRONG_GUESS_COUNT) return 'loss';
+    if (wrongGuesses.length  > WRONG_GUESS_COUNT) return 'loss';
     return null;
 }
 
@@ -114,12 +111,11 @@ function handleLetterClick(evt) {
     ) return
     if (hiddenWord.includes(letter)) {   
         hiddenWord.forEach(function (char, idx) {
-            if (char === letter)return guessedLetters[idx] = letter;
+            if (char === letter) guessedLetters[idx] = letter;
         });
     } else {
         wrongGuesses.push(letter);
-        gameStatus = getGameStatus();
     }
+    gameStatus = getGameStatus();
     render();
 }
-getGameStatus();
